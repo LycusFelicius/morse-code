@@ -74,15 +74,18 @@ def morse(letter):
             return("----.")
         case "0":
             return("-----")
+        #special case
+        case " ":
+            return("/")
 def main():
     code = []
     #waiting input
-    words = input("Enter Word/s : ")
+    words = input("Enter Word(s) : ")
     #divide word to letters
-    letters = [*words]
+    letters = [*words.lower()]
     #turn letter into code
     for letter in letters:
         code.append(morse(letter))
     #print final code
-    print(*code)
+    print("Morse : ", *code)
 main()
